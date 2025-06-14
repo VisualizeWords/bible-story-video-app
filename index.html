@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bible Story Video Generator</title>
+  <title>Bible Story Video Maker</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #eef2f5; padding: 20px; text-align: center; }
-    textarea { width: 90%; height: 120px; padding: 10px; margin-bottom: 15px; font-size: 16px; }
-    a.button { display: inline-block; padding: 15px 25px; background: #4c6ef5; color: white; text-decoration: none; border-radius: 8px; font-size: 16px; }
-    a.button:hover { background: #364fc7; }
-    .note { margin-top: 20px; font-size: 14px; color: #555; }
+    body { font-family: sans-serif; background: #f0f0f0; padding: 20px; text-align: center; }
+    textarea { width: 90%; height: 120px; padding: 10px; font-size: 16px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc; }
+    .button { background-color: #4CAF50; color: white; padding: 15px 25px; text-align: center; text-decoration: none; font-size: 16px; border-radius: 8px; display: inline-block; }
+    .note { font-size: 14px; color: #666; margin-top: 20px; }
   </style>
 </head>
 <body>
 
-  <h2>Generate Bible Story Video — For Free</h2>
-  <textarea id="promptInput" placeholder="e.g., David defeats Goliath on the battlefield at sunrise..."></textarea><br/>
+  <h2>Bible Story → AI Video (Free)</h2>
+  <textarea id="promptInput" placeholder="e.g., Elijah calls down fire from heaven on Mount Carmel, dramatic, cloudy sky..."></textarea><br/>
 
-  <p>
-    <a href="#" id="openBtn" class="button">Open Video Generator</a>
-  </p>
+  <a href="#" onclick="openPika()" class="button">Open Pika Video Generator</a>
 
   <p class="note">
-    Opens a free AI video tool powered by Text2Video‑Zero on Hugging Face.<br/>
-    Paste your prompt, click generate, then download your Bible story video.
+    1. Sign in to <a href="https://pika.art" target="_blank">pika.art</a><br/>
+    2. Paste your prompt into the generator<br/>
+    3. Generate, download, and share your Bible story video!
   </p>
 
   <script>
-    document.getElementById('openBtn').addEventListener('click', () => {
-      const prompt = encodeURIComponent(document.getElementById('promptInput').value);
-      const spaceURL = 'https://huggingface.co/spaces/PAIR/Text2Video-Zero?__theme=light';
-      window.open(spaceURL, '_blank');
-    });
+    function openPika() {
+      const prompt = encodeURIComponent(document.getElementById("promptInput").value);
+      window.open("https://pika.art", "_blank");
+    }
   </script>
 
 </body>
